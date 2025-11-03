@@ -1,0 +1,24 @@
+http-hyper text transfer protocol
+url -- uri -- 
+http headers--metadata---- key value sent along with request and response
+
+headers uses--------------------
+caching,authentication,manage state
+
+
+request header----from client
+response header--from server
+representation headers---encoding/compression
+payload headers---- data
+
+
+get-- retrieve a resource
+head-- no meassage body (response headers only)
+options--what operations are available
+trace--loopback test
+delete:remove a resource
+put: replace a resource
+post: interact with resource
+patch:change part of a resource
+
+ 
