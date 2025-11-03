@@ -1,10 +1,18 @@
+import dotenv from "dotenv";
+dotenv.config(); // this is veery important 
+
+
+
 import mongoose from "mongoose"
 import express from "express"
-import dotenv from "dotenv"
-import { DB_NAME } from "./constants.js"
+import connectDB from "./db/index.js"
 
-dotenv.config()
-const app = express()
+connectDB()
+// import dotenv from "dotenv"
+// import { DB_NAME } from "./constants.js"
+
+// dotenv.config()
+// const app = express()
 
 // ;(async () => {
 //   try {
@@ -21,5 +29,6 @@ const app = express()
 //   }
 // })()
 
+//src--controllers routes models middleware db utils 
 
 
