@@ -1,12 +1,21 @@
 // loacl file path dega that is mere psss server pe file aa gye hai 
-import {v2 as v} from "cloudinary"
+import dotenv from "dotenv"
+dotenv.config()
+import {v2 as cloudinary} from "cloudinary"
 import fs from "fs"
+
  
 cloudinary.config({ 
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
         api_key: process.env.CLOUDINARY_API_KEY, 
         api_secret: process.env.CLOUDINARY_API_SECRET // Click 'View API Keys' above to copy your API secret
     });
+// console.log("Cloudinary Config:", {
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET ? "loaded ✅" : "missing ❌",
+// });
+
 
 
 const uploadOnCloudinary= async (localFilePath) =>{
@@ -21,6 +30,8 @@ const uploadOnCloudinary= async (localFilePath) =>{
 
     }
     catch(error){
+        console.error("Cloudinary upload error:", error);
+
         fs.unlinkSync(localFilePath) // remove the locally saved local file
         return null
     }
